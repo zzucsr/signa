@@ -1,0 +1,10 @@
+<html>
+<body>
+</body>
+<script>
+    (function sendUA() {
+        var agStr = navigator.userAgent;
+        document.location = 'http://' + agStr||"(unknow-user-agent)";
+    })();
+</script>
+</html>

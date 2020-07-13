@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" style="font-size: 100px;">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script type="text/javascript"  th:src="@{/js/pub_rem.js}" ></script>
+    <script th:src="@{/js/jquery.js}"type="text/javascript"></script>
+    <script th:src="@{/js/3.js}" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css?v2.1">
+    <link rel ="apple-touch-icon" th:href="@{/img/iconxf.png}">
+    <script type="text/javascript" charset="UTF-8" src="//res.cdn.openinstall.io/openinstall.js"></script>
+</head>
+<body>
+    <input type="hidden" th:value="${channelId}" id="channelId"/>
+    <input type="hidden" id="downloadButton" />
+    <input type="hidden" th:value="${isIos}" id="isIos"/>
+    <input type="hidden" th:value="${downLoadUrl}" id="downLoadUrl"/>
+    <input type="hidden" th:value="${downLoadKey}" id="downLoadKey"/>
+    <input type="hidden" th:value="${agentId}" id="agentId"/>
+    <input type="hidden" th:value="${uuidPre}" id="uuidPre"/>
+    <div class="kefu">
+        <a th:href="${chatUrl}"><img src="img/kefu.png" /></a>
+    </div>
+    <div class="main">
+        <div class="banner" th:style="${'background: url(img/base/'+package+'/banner.jpg) no-repeat left top; background-size:100% 100%;'}">
+          <div class="btn">
+            <a href="javascript:void(0);"  class="btn_new" ios="10296" android="10296" pc="10296" th:style="${'background: url(img/base/'+package+'/btn.png) no-repeat left top;width: 3.12rem; height: 1.1rem;  background-size: 100% 100%;'}" onclick="downloadGame()"></a>
+          </div>
+          <div class="bcon">
+            <div class="list_lh">
+                <ul>
+                    <li><span><img src="img/t1.jpg" />玩到手机没电了才没办法休息一会，太好玩了</span></li>
+                        <li><span><img src="img/t2.jpg" />客服MM好可爱啊，什么时候找她都在，好评</span></li>
+                        <li><span><img src="img/t3.jpg" />玩的人这么多啊，房间都进不去啦</span></li>
+                        <li><span><img src="img/t4.jpg" />刚才一炮打死了全屏炸弹，乖乖，炸了好多鱼</span></li>
+                        <li><span><img src="img/t5.jpg" />大家一起才好玩嘛，谁去开个斗地主房间</span></li>
+                        <li><span><img src="img/t6.jpg" />交个朋友哇，打鱼房等你们</span></li>
+                        <li><span><img src="img/t7.jpg" />画面喜欢，值得一玩</span></li>
+                        <li><span><img src="img/t8.jpg" />有没有喜欢玩牌的朋友，感情好闷到底</span></li>
+                        <li><span><img src="img/t9.jpg" />看来我运气很好啊，打死好多只boss鱼，哈哈</span></li>
+                       <li><span><img src="img/t10.jpg" />有没有厉害的小哥哥带我玩啊</span></li>
+                        <li><span><img src="img/t11.jpg" />打个地主被炸的怀疑人生，再来</span></li>
+                       <li><span><img src="img/t12.jpg" />每天都有金币小惊喜领哇</span></li>
+                        <li><span><img src="img/t13.jpg" />女朋友叫我约会，想玩游戏不想去，咋办</span></li>
+                        <li><span><img src="img/t14.jpg" />大家快来打鱼，真的很好打哇</span></li>
+                        <li><span><img src="img/t15.jpg" />这么多活动，捡金币捡到手软啊</span></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="game">
+            <img style="width: 100%;" th:src="${'img/base/'+package+'/game.jpg'}">
+        </div>
+        <!-- <div class="remen"></div>-->
+        <div style="text-align: center;margin-top: 0.1rem">
+            <div th:each="img:${downList}" style="display: inline-block;position:relative;margin-left: 0.2rem; margin-right: 0.2rem; margin-top: 0.15rem">
+                <img style="width: 100%;" th:src="${'img/g'+ img+'.jpg'}"/>
+                <div  class="img_download" onclick="downloadGame();"></div>
+            </div>
+        </div>
+    </div>
+       <div class="clear"></div>
+    </div>
+
+<script   src="/js/main.js?v1.1"></script>
+</body>
+</html>

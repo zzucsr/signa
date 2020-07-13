@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a id="upload"> 下载 </a>
+<script>
+    var type = '[[${type}]]';
+    var encryptHex = '[[${encryptHex}]]';
+    var downLoadUrl = '[[${downLoadUrl}]]';
+    if (type == 1) {
+        hrefVal = "/udid/superSign?encryptHex=" + encryptHex;
+    } else if (type == 2) {
+        hrefVal = "itms-services://?action=download-manifest&url=" + downLoadUrl;
+    } else {
+        hrefVal = "/mobile.mobileconfig";
+    }
+
+    document.getElementById("upload").setAttribute("href",hrefVal);
+
+</script>
+</body>
+</html>
